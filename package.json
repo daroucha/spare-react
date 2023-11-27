@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^2.42.0",
+    "@tanstack/react-query": "^5.8.7",
+    "@tanstack/react-query-devtools": "^5.8.8",
     "autoprefixer": "^10.4.16",
     "flowbite": "^2.2.0",
     "flowbite-react": "^0.7.0",

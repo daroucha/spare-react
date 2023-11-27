@@ -11,6 +11,7 @@ import {
   useLinkClickHandler,
   useLocation,
 } from 'react-router-dom'
+
 import spareLogo from '../../public/spare.svg'
 
 function AppNavLink({ to, text }) {
