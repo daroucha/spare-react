@@ -74,7 +74,7 @@ function DataTable() {
 function Incomes() {
   return (
     <div>
-      <h1>Incomes</h1>
+      <h1 className="text-2xl font-bold">Incomes</h1>
 
       <DataTable />
     </div>
