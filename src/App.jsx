@@ -18,6 +18,7 @@ import Incomes from './pages/Incomes'
 import NotFound from './pages/NotFound'
 
 import './styles/tailwind.css'
+import ProtectedRoute from './ui/ProtectedRoute'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -41,7 +42,13 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
 
-          <Route element={<AuthLayout />}>
+          <Route
+            element={
+              <ProtectedRoute>
+                <AuthLayout />
+              </ProtectedRoute>
+            }
+          >
             <Route path="dashboard" element={<Home />} />
             <Route path="incomes" element={<Incomes />} />
           </Route>
