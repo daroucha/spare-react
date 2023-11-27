@@ -1,3 +1,4 @@
+import { IconPencil, IconTrash } from '@tabler/icons-react'
 import { Table, Button, Checkbox } from 'flowbite-react'
 
 function DataTable() {
@@ -13,7 +14,7 @@ function DataTable() {
       installment: '',
     },
     {
-      id: 0,
+      id: 1,
       name: 'Freela',
       amount: 6000,
       category: 'Job',
@@ -44,7 +45,7 @@ function DataTable() {
 
       <Table.Body>
         {data.map((item) => (
-          <Table.Row key={item}>
+          <Table.Row key={item.id}>
             <Table.Cell>
               <Checkbox />
             </Table.Cell>
@@ -59,9 +60,13 @@ function DataTable() {
 
             <Table.Cell>
               <Button.Group>
-                <Button color="gray">A</Button>
-                <Button color="gray">B</Button>
-                <Button color="gray">C</Button>
+                <Button color="gray">
+                  <IconPencil size={16} />
+                </Button>
+
+                <Button color="gray">
+                  <IconTrash size={16} />
+                </Button>
               </Button.Group>
             </Table.Cell>
           </Table.Row>

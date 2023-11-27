@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
   Navbar,
   Flowbite,
@@ -6,10 +7,11 @@ import {
   Avatar,
 } from 'flowbite-react'
 import {
+  Outlet,
   useLinkClickHandler,
   useLocation,
 } from 'react-router-dom'
-import spareLogo from '../../assets/images/spare.svg'
+import spareLogo from '../../public/spare.svg'
 
 function AppNavLink({ to, text }) {
   const location = useLocation()
@@ -32,7 +34,7 @@ function AppNavBar() {
     {
       name: 'home',
       text: 'Dashboard',
-      path: '/',
+      path: '/dashboard',
     },
     {
       name: 'incomes',
@@ -102,16 +104,18 @@ function AppNavBar() {
   )
 }
 
-function Auth({ children }) {
+function AuthLayout() {
   return (
     <Flowbite>
       <div className="Panel w-screen h-screen">
         <AppNavBar />
 
-        <div className="Content w-full">{children}</div>
+        <div className="Content w-full">
+          <Outlet />
+        </div>
       </div>
     </Flowbite>
   )
 }
 
-export default Auth
+export default AuthLayout

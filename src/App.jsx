@@ -1,37 +1,35 @@
-import React from 'react'
 import {
   Routes,
   Route,
-  Link,
-  useNavigate,
-  useLocation,
+  BrowserRouter,
   Navigate,
-  Outlet,
 } from 'react-router-dom'
 
-import Auth from './components/layout/Auth'
+import './styles/tailwind.css'
 
+import AuthLayout from './ui/AuthLayout'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import Incomes from './pages/Incomes'
 import NotFound from './pages/NotFound'
 
-function Layout() {
-  return (
-    <Auth>
-      <Outlet />
-    </Auth>
-  )
-}
-
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/incomes" element={<Incomes />} />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          index
+          element={<Navigate replace to="login" />}
+        />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-      </Route>
-    </Routes>
+
+        <Route element={<AuthLayout />}>
+          <Route path="dashboard" element={<Home />} />
+          <Route path="incomes" element={<Incomes />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
