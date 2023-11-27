@@ -9,13 +9,16 @@ import {
   Outlet,
 } from 'react-router-dom'
 
+import Auth from './components/layout/Auth'
+
 import Home from './pages/Home'
+import NotFound from './pages/NotFound'
 
 function Layout() {
   return (
-    <div className="App">
+    <Auth>
       <Outlet />
-    </div>
+    </Auth>
   )
 }
 
@@ -24,6 +27,7 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )
