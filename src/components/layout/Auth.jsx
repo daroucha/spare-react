@@ -9,6 +9,7 @@ import {
   useLinkClickHandler,
   useLocation,
 } from 'react-router-dom'
+import spareLogo from '../../assets/images/spare.svg'
 
 function AppNavLink({ to, text }) {
   const location = useLocation()
@@ -29,18 +30,41 @@ function AppNavLink({ to, text }) {
 function AppNavBar() {
   const navLinks = [
     {
-      text: 'Home',
+      name: 'home',
+      text: 'Dashboard',
       path: '/',
+    },
+    {
+      name: 'incomes',
+      text: 'Entradas',
+      path: '/incomes',
+    },
+    {
+      name: 'expenses',
+      text: 'Despesas',
+      path: '/expenses',
+    },
+    {
+      name: 'goals',
+      text: 'Metas',
+      path: '/goals',
     },
   ]
 
   return (
     <Navbar>
-      <Navbar.Brand></Navbar.Brand>
+      <Navbar.Brand>
+        <img src={spareLogo} />
+      </Navbar.Brand>
 
       <Navbar.Collapse>
-        <AppNavLink to="/" text="Home" />
-        <AppNavLink to="/sdfs" text="404" />
+        {navLinks.map((link) => (
+          <AppNavLink
+            key={link.name}
+            to={link.path}
+            text={link.text}
+          />
+        ))}
       </Navbar.Collapse>
 
       <div className="flex md:order-2 space-x-4">
@@ -49,9 +73,9 @@ function AppNavBar() {
           inline
           label={
             <div className="flex items-center space-x-4">
-              <h5 className="text-gray-900 dark:text-white">
+              <h6 className="text-gray-900 dark:text-white">
                 John Doe
-              </h5>
+              </h6>
 
               <Avatar
                 alt="User settings"

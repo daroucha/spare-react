@@ -12,6 +12,7 @@ import {
 import Auth from './components/layout/Auth'
 
 import Home from './pages/Home'
+import Incomes from './pages/Incomes'
 import NotFound from './pages/NotFound'
 
 function Layout() {
@@ -27,6 +28,7 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/incomes" element={<Incomes />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
