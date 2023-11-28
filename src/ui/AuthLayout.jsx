@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom'
 
 import spareLogo from '../../public/spare.svg'
+import Logout from '../features/authentication/Logout'
 
 function AppNavLink({ to, text }) {
   const location = useLocation()
@@ -96,7 +97,7 @@ function AppNavBar() {
 
           <Dropdown.Divider />
 
-          <Dropdown.Item>Sair</Dropdown.Item>
+          <Logout />
         </Dropdown>
 
         <Navbar.Toggle />

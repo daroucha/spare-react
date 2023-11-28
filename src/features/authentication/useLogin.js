@@ -10,7 +10,7 @@ export function useLogin() {
       loginApi({ email, password }),
     onSuccess: (user) => {
       sessionStorage.setItem('token', user.token)
-      navigate('/dashboard')
+      navigate('/dashboard', { replace: true })
     },
     onError: (err) => {
       console.log(err.response.data)

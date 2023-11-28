@@ -24,3 +24,7 @@ export async function getCurrentUser() {
 
   return data
 }
+
+export function logout() {
+  sessionStorage.removeItem('token')
+}
