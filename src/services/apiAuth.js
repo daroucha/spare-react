@@ -16,13 +16,16 @@ export async function getCurrentUser() {
     return null
   }
 
-  const { data } = await api.get('/api/v1/auth/me', {
-    headers: {
-      Authorization: `Bearer ${sessionToken}`,
-    },
-  })
+  const { data: response } = await api.get(
+    '/api/v1/auth/me',
+    {
+      headers: {
+        Authorization: `Bearer ${sessionToken}`,
+      },
+    }
+  )
 
-  return data
+  return response.data
 }
 
 export function logout() {

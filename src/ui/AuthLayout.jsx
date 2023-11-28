@@ -10,6 +10,7 @@ import {
   useLinkClickHandler,
   useLocation,
 } from 'react-router-dom'
+import { useUser } from '../features/authentication/useUser'
 
 import spareLogo from '../../public/spare.svg'
 import Logout from '../features/authentication/Logout'
@@ -31,6 +32,8 @@ function AppNavLink({ to, text }) {
 }
 
 function AppNavBar() {
+  const { user } = useUser()
+
   const navLinks = [
     {
       name: 'home',
@@ -77,14 +80,10 @@ function AppNavBar() {
           label={
             <div className="flex items-center space-x-4">
               <h6 className="text-gray-900 dark:text-white">
-                John Doe
+                {user.name}
               </h6>
 
-              <Avatar
-                alt="User settings"
-                img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                rounded
-              />
+              <Avatar alt="User settings" rounded />
             </div>
           }
         >
