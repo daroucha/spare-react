@@ -37,3 +37,14 @@ export async function sendConfirmationEmail({ email }) {
 
   return data
 }
+
+export async function signUp({ name, email, password }) {
+  const { data } = await api.post('/api/v1/auth/register', {
+    name,
+    email,
+    password,
+    role: 'user',
+  })
+
+  return data
+}
