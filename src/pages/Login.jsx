@@ -1,6 +1,9 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Carousel } from 'flowbite-react'
 import LoginForm from '../features/authentication/LoginForm'
 import { TextDisplayXs } from '../ui/TextDisplay'
+import { TextBodySm } from '../ui/TextBody'
+import TextLink from '../ui/TextLink'
 
 function Billboard() {
   return (
@@ -35,6 +38,11 @@ function Login() {
         <TextDisplayXs>👋 Hello again</TextDisplayXs>
 
         <LoginForm />
+
+        <TextBodySm>
+          Don't have an account yet?{' '}
+          <TextLink to="/sign-up">Sign-up</TextLink>
+        </TextBodySm>
       </div>
     </div>
   )

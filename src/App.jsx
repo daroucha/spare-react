@@ -17,6 +17,7 @@ import AuthLayout from './ui/AuthLayout'
 import ProtectedRoute from './ui/ProtectedRoute'
 import Login from './pages/Login'
 import ForgotPassword from './pages/ForgotPassword'
+import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import Incomes from './pages/Incomes'
 import Expenses from './pages/Expenses'
@@ -48,6 +49,7 @@ function App() {
                 path="forgot-password"
                 element={<ForgotPassword />}
               />
+              <Route path="sign-up" element={<SignUp />} />
               <Route path="*" element={<NotFound />} />
             </Route>
 
