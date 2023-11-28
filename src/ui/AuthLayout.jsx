@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import {
   Navbar,
-  Flowbite,
   DarkThemeToggle,
   Dropdown,
   Avatar,
@@ -108,15 +107,13 @@ function AppNavBar() {
 
 function AuthLayout() {
   return (
-    <Flowbite>
-      <div className="Panel w-screen h-screen">
-        <AppNavBar />
+    <div className="Panel w-screen h-screen">
+      <AppNavBar />
 
-        <div className="Content w-full">
-          <Outlet />
-        </div>
+      <div className="Content w-full">
+        <Outlet />
       </div>
-    </Flowbite>
+    </div>
   )
 }
 
