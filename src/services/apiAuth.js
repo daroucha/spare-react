@@ -28,3 +28,12 @@ export async function getCurrentUser() {
 export function logout() {
   sessionStorage.removeItem('token')
 }
+
+export async function sendConfirmationEmail({ email }) {
+  const { data } = await api.post(
+    '/api/v1/auth/forgotpassword',
+    { email }
+  )
+
+  return data
+}

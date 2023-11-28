@@ -16,6 +16,7 @@ import UnAuthLayout from './ui/UnAuthLayout'
 import AuthLayout from './ui/AuthLayout'
 import ProtectedRoute from './ui/ProtectedRoute'
 import Login from './pages/Login'
+import ForgotPassword from './pages/ForgotPassword'
 import Home from './pages/Home'
 import Incomes from './pages/Incomes'
 import Expenses from './pages/Expenses'
@@ -43,6 +44,10 @@ function App() {
           <Routes>
             <Route element={<UnAuthLayout />}>
               <Route path="login" element={<Login />} />
+              <Route
+                path="forgot-password"
+                element={<ForgotPassword />}
+              />
               <Route path="*" element={<NotFound />} />
             </Route>
 

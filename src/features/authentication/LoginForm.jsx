@@ -1,34 +1,14 @@
 import { useState } from 'react'
+import { Button, TextInput, Label } from 'flowbite-react'
 import {
-  Button,
-  TextInput,
-  Label,
-  Alert,
-} from 'flowbite-react'
-import {
-  IconAlertOctagonFilled,
   IconBrandGoogle,
   IconFidgetSpinner,
   IconLock,
   IconMail,
 } from '@tabler/icons-react'
+import FormAlert from '../../ui/FormAlert'
 import { useLogin } from './useLogin'
 import TextLink from '../../ui/TextLink'
-
-// eslint-disable-next-line react/prop-types
-function FormAlert({ message, dismiss }) {
-  if (message) {
-    return (
-      <Alert
-        color="failure"
-        icon={IconAlertOctagonFilled}
-        onDismiss={dismiss}
-      >
-        {message}
-      </Alert>
-    )
-  }
-}
 
 function LoginForm() {
   const [email, setEmail] = useState('')
@@ -65,6 +45,7 @@ function LoginForm() {
       className="flex max-w-md flex-col gap-8"
     >
       <FormAlert
+        type="failure"
         message={error}
         dismiss={() => setError(null)}
       />
