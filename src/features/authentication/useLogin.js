@@ -9,7 +9,7 @@ export function useLogin() {
     mutationFn: ({ email, password }) =>
       loginApi({ email, password }),
     onSuccess: (user) => {
-      console.log(user.data)
+      sessionStorage.setItem('token', user.token)
       navigate('/dashboard')
     },
     onError: (err) => {
