@@ -1,6 +1,8 @@
 import { IconPencil, IconTrash } from '@tabler/icons-react'
 import { Table, Button, Checkbox } from 'flowbite-react'
 
+import { TextDisplayXs } from '../ui/TextDisplay'
+
 function DataTable() {
   const data = [
     {
@@ -79,7 +81,7 @@ function DataTable() {
 function Incomes() {
   return (
     <div>
-      <h1 className="text-2xl font-bold">Incomes</h1>
+      <TextDisplayXs>Incomes</TextDisplayXs>
 
       <DataTable />
     </div>

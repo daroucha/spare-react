@@ -5,7 +5,7 @@ import spareLogo from '../../public/spare.svg'
 
 function UnAuthLayout() {
   return (
-    <div className="w-full h-screen grid content-between">
+    <div className="w-full h-screen grid content-between bg-white dark:bg-gray-800">
       <Navbar>
         <Navbar.Brand>
           <img src={spareLogo} />

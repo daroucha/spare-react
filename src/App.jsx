@@ -18,6 +18,8 @@ import ProtectedRoute from './ui/ProtectedRoute'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Incomes from './pages/Incomes'
+import Expenses from './pages/Expenses'
+import Goals from './pages/Goals'
 import NotFound from './pages/NotFound'
 
 import './styles/tailwind.css'
@@ -59,6 +61,11 @@ function App() {
               />
               <Route path="dashboard" element={<Home />} />
               <Route path="incomes" element={<Incomes />} />
+              <Route
+                path="expenses"
+                element={<Expenses />}
+              />
+              <Route path="goals" element={<Goals />} />
             </Route>
           </Routes>
         </BrowserRouter>

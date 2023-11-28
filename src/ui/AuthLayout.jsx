@@ -107,7 +107,7 @@ function AppNavBar() {
 
 function AuthLayout() {
   return (
-    <div className="Panel w-screen h-screen">
+    <div className="w-screen h-screen bg-white dark:bg-gray-800">
       <AppNavBar />
 
       <div className="Content w-full">
