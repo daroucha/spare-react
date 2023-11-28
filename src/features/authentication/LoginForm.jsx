@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import {
   Button,
   TextInput,
@@ -14,6 +13,7 @@ import {
   IconMail,
 } from '@tabler/icons-react'
 import { useLogin } from './useLogin'
+import TextLink from '../../ui/TextLink'
 
 // eslint-disable-next-line react/prop-types
 function FormAlert({ message, dismiss }) {
@@ -107,9 +107,12 @@ function LoginForm() {
             required
           />
 
-          <Link className="text-end" to="/forgot-password">
+          <TextLink
+            className="text-end"
+            to="/forgot-password"
+          >
             Esqueceu a senha?
-          </Link>
+          </TextLink>
         </fieldset>
       </div>
 
