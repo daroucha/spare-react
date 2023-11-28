@@ -8,23 +8,25 @@ function ForgotPassword() {
   return (
     <div
       id="ForgotPasswordPage"
-      className="flex flex-col justify-center gap-y-4"
+      className="flex justify-center"
     >
-      <TextDisplayXs>
-        🤔 Forgot your password?
-      </TextDisplayXs>
+      <div className="w-2/6 gap-y-4 flex flex-col">
+        <TextDisplayXs>
+          🤔 Forgot your password?
+        </TextDisplayXs>
 
-      <TextBodySm>
-        Don't worry, you can set a new password by typing
-        your e-mail address on the field below
-      </TextBodySm>
+        <TextBodySm>
+          Don't worry, you can set a new password by typing
+          your e-mail address on the field below
+        </TextBodySm>
 
-      <ForgotPasswordForm />
+        <ForgotPasswordForm />
 
-      <TextBodySm>
-        Oh you remembered it?{' '}
-        <TextLink to="/">Sign-in</TextLink>
-      </TextBodySm>
+        <TextBodySm>
+          Oh you remembered it?{' '}
+          <TextLink to="/">Sign-in</TextLink>
+        </TextBodySm>
+      </div>
     </div>
   )
 }
