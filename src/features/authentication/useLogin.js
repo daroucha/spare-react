@@ -12,9 +12,6 @@ export function useLogin() {
       sessionStorage.setItem('token', user.token)
       navigate('/dashboard', { replace: true })
     },
-    onError: (err) => {
-      console.log(err.response.data)
-    },
   })
 
   return { login, isLoading }

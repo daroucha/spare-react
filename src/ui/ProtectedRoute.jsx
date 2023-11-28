@@ -4,6 +4,14 @@ import { Spinner } from 'flowbite-react'
 import { useUser } from '../features/authentication/useUser'
 import { useEffect } from 'react'
 
+function RouteLoading() {
+  return (
+    <div className="w-full h-screen bg-white dark:bg-black flex items-center justify-center">
+      <Spinner />
+    </div>
+  )
+}
+
 function ProtectedRoute({ children }) {
   const navigate = useNavigate()
 
@@ -22,7 +30,7 @@ function ProtectedRoute({ children }) {
 
   // Loading spinner
   if (isLoading) {
-    return <Spinner />
+    return <RouteLoading />
   }
 
   // If there is, render app

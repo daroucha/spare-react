@@ -1,15 +1,37 @@
 import { useState } from 'react'
-import { Button, TextInput, Label } from 'flowbite-react'
 import {
+  Button,
+  TextInput,
+  Label,
+  Alert,
+} from 'flowbite-react'
+import {
+  IconAlertOctagonFilled,
   IconFidgetSpinner,
   IconLock,
   IconMail,
 } from '@tabler/icons-react'
 import { useLogin } from './useLogin'
 
+// eslint-disable-next-line react/prop-types
+function FormAlert({ message, dismiss }) {
+  if (message) {
+    return (
+      <Alert
+        color="failure"
+        icon={IconAlertOctagonFilled}
+        onDismiss={dismiss}
+      >
+        {message}
+      </Alert>
+    )
+  }
+}
+
 function LoginForm() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [error, setError] = useState(null)
 
   const { login, isLoading } = useLogin()
 
@@ -26,6 +48,10 @@ function LoginForm() {
         onSettled: () => {
           setPassword('')
         },
+        onError: (err) => {
+          const { error: apiError } = err.response.data
+          setError(apiError)
+        },
       }
     )
   }
@@ -35,6 +61,11 @@ function LoginForm() {
       onSubmit={handleSubmit}
       className="flex max-w-md flex-col gap-4"
     >
+      <FormAlert
+        message={error}
+        dismiss={() => setError(null)}
+      />
+
       <div>
         <div className="mb-2 block">
           <Label htmlFor="email" value="E-mail" />

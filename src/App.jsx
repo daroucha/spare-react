@@ -35,10 +35,6 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route
-            index
-            element={<Navigate replace to="login" />}
-          />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
 
@@ -49,6 +45,10 @@ function App() {
               </ProtectedRoute>
             }
           >
+            <Route
+              index
+              element={<Navigate replace to="dashboard" />}
+            />
             <Route path="dashboard" element={<Home />} />
             <Route path="incomes" element={<Incomes />} />
           </Route>
