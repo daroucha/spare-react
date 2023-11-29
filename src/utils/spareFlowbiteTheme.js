@@ -7,7 +7,7 @@ const spareFlowbiteTheme = {
       },
     },
     link: {
-      base: 'block py-2 px-4 rounded-full transition duration-100 ease-linear',
+      base: 'block py-2 px-4 text-base rounded-full transition duration-100 ease-linear',
       active: {
         on: 'bg-spare-gray-5 font-semibold text-spare-gray-100 dark:text-white',
         off: 'rounded-lg font-normal text-spare-gray-50 hover:shadow-stroke-md',

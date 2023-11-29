@@ -12,8 +12,9 @@ import {
 } from 'react-router-dom'
 import { useUser } from '../features/authentication/useUser'
 
-import spareLogo from '../../public/spare.svg'
+import spareLogo from '../assets/images/spare.svg'
 import Logout from '../features/authentication/Logout'
+import { TextTitleSm } from './TextTitle'
 
 function AppNavLink({ to, text }) {
   const location = useLocation()
@@ -79,9 +80,7 @@ function AppNavBar() {
           inline
           label={
             <div className="flex items-center space-x-4">
-              <h6 className="text-gray-900 dark:text-white">
-                {user.name}
-              </h6>
+              <TextTitleSm bold>{user.name}</TextTitleSm>
 
               <Avatar alt="User settings" rounded />
             </div>

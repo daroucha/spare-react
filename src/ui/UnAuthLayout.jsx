@@ -1,7 +1,7 @@
 import { Navbar, Footer } from 'flowbite-react'
 import { Outlet } from 'react-router-dom'
 
-import spareLogo from '../../public/spare.svg'
+import spareLogo from '../assets/images/spare.svg'
 
 function UnAuthLayout() {
   return (

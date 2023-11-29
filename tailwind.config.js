@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['spare-whitney'],
+      },
       colors: {
         'spare-primary': '#0073E6',
         'spare-blue': {
