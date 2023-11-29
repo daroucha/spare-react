@@ -26,6 +26,7 @@ import NotFound from './pages/NotFound'
 
 import './styles/tailwind.css'
 import spareFlowbiteTheme from './utils/spareFlowbiteTheme'
+import AppToasts from './ui/AppToasts'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +40,8 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
+
+      <AppToasts />
 
       <Flowbite theme={{ theme: spareFlowbiteTheme }}>
         <BrowserRouter>

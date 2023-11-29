@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 export function TextBodyXs({ children }) {
   return (
-    <span className="text-xs font-regular text-black dark:text-white">
+    <span className="text-xs font-regular text-spare-gray-60 dark:text-white">
       {children}
     </span>
   )
@@ -9,7 +9,7 @@ export function TextBodyXs({ children }) {
 
 export function TextBodySm({ children }) {
   return (
-    <span className="text-sm font-regular text-black dark:text-white">
+    <span className="text-sm font-regular text-spare-gray-60 dark:text-white">
       {children}
     </span>
   )

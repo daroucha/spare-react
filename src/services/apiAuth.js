@@ -1,3 +1,4 @@
+import toast from 'react-hot-toast'
 import api from './api'
 
 export async function login({ email, password }) {
@@ -16,14 +17,13 @@ export async function getCurrentUser() {
     return null
   }
 
-  const { data: response } = await api.get(
-    '/api/v1/auth/me',
-    {
+  const { data: response } = await api
+    .get('/api/v1/auth/me', {
       headers: {
         Authorization: `Bearer ${sessionToken}`,
       },
-    }
-  )
+    })
+    .catch((err) => toast(err.message))
 
   return response.data
 }
