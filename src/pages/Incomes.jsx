@@ -1,4 +1,8 @@
-import { IconPencil, IconTrash } from '@tabler/icons-react'
+import {
+  IconPencil,
+  IconPlus,
+  IconTrash,
+} from '@tabler/icons-react'
 import { Table, Button, Checkbox } from 'flowbite-react'
 
 import { TextDisplayXs } from '../ui/TextDisplay'
@@ -78,10 +82,23 @@ function DataTable() {
   )
 }
 
+function PageHeader() {
+  return (
+    <div className="flex justify-between items-center">
+      <TextDisplayXs>Incomes</TextDisplayXs>
+
+      <Button size="md">
+        <IconPlus size={16} className="mr-2" />
+        Add income
+      </Button>
+    </div>
+  )
+}
+
 function Incomes() {
   return (
-    <div>
-      <TextDisplayXs>Incomes</TextDisplayXs>
+    <div className="w-full px-8 py-4 flex flex-col space-y-4">
+      <PageHeader />
 
       <DataTable />
     </div>

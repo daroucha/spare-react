@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         sans: ['spare-whitney'],
       },
+      fontSize: {
+        '4.5xl': '2rem',
+      },
       colors: {
         'spare-primary': '#0073E6',
         'spare-blue': {
