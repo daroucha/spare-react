@@ -31,7 +31,7 @@ const spareFlowbiteTheme = {
       input: {
         base: 'block w-full rounded-none',
         sizes: {
-          sm: 'px-2 py-1 h-8 sm:text-sm',
+          sm: 'px-2 py-1 h-8 sm:text-base',
         },
         colors: {
           gray: 'bg-white border-spare-stroke-primary placeholder-spare-gray-50 text-spare-gray-80 focus:border-spare-primary',
@@ -57,7 +57,19 @@ const spareFlowbiteTheme = {
       off: 'rounded-lg',
     },
     size: {
-      md: 'text-sm px-4 h-10',
+      md: 'text-base font-semibold px-4 h-10',
+    },
+  },
+  dropdown: {
+    content: 'py-2 px-1',
+    floating: {
+      base: 'z-10 w-fit rounded-lg divide-y divide-gray-100 shadow-spare-lg border border-spare-stroke-secondary focus:outline-none',
+      item: {
+        base: 'rounded-md h-8 flex items-center justify-start cursor-pointer w-full px-2 text-base font-normal text-spare-gray-90 hover:bg-spare-gray-5',
+        icon: 'mr-4 h-4 w-4 text-spare-gray-60',
+      },
+      divider:
+        'my-1 h-px bg-spare-stroke-primary dark:bg-gray-600',
     },
   },
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import ForgotPasswordForm from '../features/password-reset/ForgotPasswordForm'
-import { TextBodySm } from '../ui/TextBody'
+import { TextBodySm, TextBodyMd } from '../ui/TextBody'
 import { TextDisplayXs } from '../ui/TextDisplay'
 import TextLink from '../ui/TextLink'
 
@@ -15,10 +15,10 @@ function ForgotPassword() {
           🤔 Forgot your password?
         </TextDisplayXs>
 
-        <TextBodySm>
+        <TextBodyMd>
           Don't worry, you can set a new password by typing
           your e-mail address on the field below
-        </TextBodySm>
+        </TextBodyMd>
 
         <ForgotPasswordForm />
 

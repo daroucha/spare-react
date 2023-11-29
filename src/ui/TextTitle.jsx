@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 function isBold(bold) {
-  return bold ? 'font-bold' : 'font-normal'
+  return bold ? 'font-semibold' : 'font-normal'
 }
 
 export function TextTitleXs({ bold, children }) {

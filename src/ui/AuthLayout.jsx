@@ -1,10 +1,5 @@
 /* eslint-disable react/prop-types */
-import {
-  Navbar,
-  DarkThemeToggle,
-  Dropdown,
-  Avatar,
-} from 'flowbite-react'
+import { Navbar, Dropdown, Avatar } from 'flowbite-react'
 import {
   Outlet,
   useLinkClickHandler,
@@ -15,6 +10,10 @@ import { useUser } from '../features/authentication/useUser'
 import spareLogo from '../assets/images/spare.svg'
 import Logout from '../features/authentication/Logout'
 import { TextTitleSm } from './TextTitle'
+import {
+  IconChevronDown,
+  IconUserCircle,
+} from '@tabler/icons-react'
 
 function AppNavLink({ to, text }) {
   const location = useLocation()
@@ -79,18 +78,23 @@ function AppNavBar() {
           arrowIcon={false}
           inline
           label={
-            <div className="flex items-center space-x-4">
-              <TextTitleSm bold>{user.name}</TextTitleSm>
+            <div className="flex items-center space-x-4 rounded-full hover:shadow-stroke-md transition duration-100 ease-linear">
+              <div className="flex items-center space-x-1 pl-2">
+                <IconChevronDown size={16} />
+                <TextTitleSm bold>{user.name}</TextTitleSm>
+              </div>
 
-              <Avatar alt="User settings" rounded />
+              <Avatar
+                alt="User settings"
+                rounded
+                size="md"
+              />
             </div>
           }
         >
-          <Dropdown.Header>
-            <DarkThemeToggle />
-          </Dropdown.Header>
-
-          <Dropdown.Item>Conta</Dropdown.Item>
+          <Dropdown.Item icon={IconUserCircle}>
+            Conta
+          </Dropdown.Item>
 
           <Dropdown.Divider />
 
