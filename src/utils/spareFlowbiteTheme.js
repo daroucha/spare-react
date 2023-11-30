@@ -52,12 +52,15 @@ const spareFlowbiteTheme = {
     base: 'group flex items-stretch items-center justify-center text-center relative focus:z-10 focus:outline-none max-h-10',
     color: {
       info: 'text-white bg-spare-primary enabled:hover:shadow-stroke-lg enabled:hover:bg-spare-blue-40 enabled:active:bg-spare-blue-70 enabled:active:shadow-stroke-sm dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition duration-100 ease-linear',
-      gray: 'text-spare-primary bg-white shadow-stroke-sm enabled:hover:shadow-stroke-lg enabled:active:bg-spare-gray-15 enabled:active:shadow-stroke-sm focus:text-spare-primary dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:enabled:hover:text-white dark:enabled:hover:bg-gray-700 focus:ring-2',
+      light:
+        'text-spare-primary bg-white shadow-stroke-sm enabled:hover:shadow-stroke-lg enabled:active:bg-spare-gray-15 enabled:active:shadow-stroke-sm focus:text-spare-primary dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:enabled:hover:text-white dark:enabled:hover:bg-gray-700 focus:ring-2',
+      gray: 'text-spare-gray-60 bg-white shadow-stroke-sm enabled:hover:shadow-stroke-md enabled:hover:text-spare-gray-100 enabled:active:bg-spare-gray-15 enabled:active:shadow-stroke-sm focus:text-spare-primary dark:bg-transparent dark:text-gray-400 dark:border-gray-600 dark:enabled:hover:text-white dark:enabled:hover:bg-gray-700 focus:ring-2',
     },
     pill: {
       off: 'rounded-lg',
     },
     size: {
+      sm: 'text-sm px-2  h-8',
       md: 'text-base font-semibold px-4 h-10',
     },
   },
@@ -71,6 +74,45 @@ const spareFlowbiteTheme = {
       },
       divider:
         'my-1 h-px bg-spare-stroke-primary dark:bg-gray-600',
+    },
+  },
+  table: {
+    root: {
+      base: 'w-full text-left text-base font-normal text-spare-gray-60 dark:text-gray-400 border-separate border-spacing-y-1',
+    },
+    head: {
+      base: 'group/head text-xs text-spare-gray-60',
+      cell: {
+        base: 'px-3 py-3 font-normal',
+      },
+    },
+    body: {
+      base: 'group/body',
+      cell: {
+        base: 'first:rounded-l-lg last:rounded-r-lg px-3 py-2',
+      },
+    },
+    row: {
+      base: 'group/row rounded-lg',
+      striped:
+        'odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700',
+    },
+  },
+  badge: {
+    root: {
+      base: 'inline-flex h-fit items-center gap-1 font-normal',
+    },
+    icon: {
+      off: 'rounded-full px-2 py-0.5',
+    },
+  },
+  checkbox: {
+    root: {
+      base: 'h-4 w-4 rounded focus:ring-2 border border-spare-gray-15 dark:border-gray-600 dark:bg-gray-700 bg-white cursor-pointer',
+      color: {
+        default:
+          'focus:ring-spare-primary dark:ring-offset-spare-primary dark:focus:ring-spare-primary text-spare-primary enabled:hover:shadow-stroke-md',
+      },
     },
   },
 }

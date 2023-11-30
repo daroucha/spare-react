@@ -107,7 +107,7 @@ function LoginForm() {
           Entrar
         </Button>
 
-        <Button color="gray">
+        <Button color="light">
           <IconBrandGoogle size={16} className="mr-2" />
           Entrar com Google
         </Button>

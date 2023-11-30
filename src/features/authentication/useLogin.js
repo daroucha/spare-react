@@ -11,6 +11,7 @@ export function useLogin() {
     onSuccess: (user) => {
       sessionStorage.setItem('token', user.token)
       navigate('/dashboard', { replace: true })
+      console.log('redirect to dashboard')
     },
   })
 
