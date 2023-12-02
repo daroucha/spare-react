@@ -101,7 +101,7 @@ function DataTable() {
       : ''
 
   const filteredData = data.filter((item) =>
-    item.name.includes(query)
+    item.name.toLowerCase().includes(query.toLowerCase())
   )
 
   return (
