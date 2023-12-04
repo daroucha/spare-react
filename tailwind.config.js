@@ -51,6 +51,7 @@ export default {
         'stroke-sm': '0 0 0 1px #00000012',
         'stroke-md': '0 0 0 2px #00000012',
         'stroke-lg': '0 0 0 4px #00000012',
+        'stroke-focus': '0 0 0 4px #0073E6',
         'spare-lg':
           '0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 8px 8px 0px rgba(0, 0, 0, 0.05), 0px 18px 11px 0px rgba(0, 0, 0, 0.03), 0px 33px 13px 0px rgba(0, 0, 0, 0.01), 0px 51px 14px 0px rgba(0, 0, 0, 0.00)',
       },
