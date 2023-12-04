@@ -1,5 +1,9 @@
 function ExpenseDataReducer(state, action) {
   switch (action.type) {
+    case 'loaded': {
+      return action.state
+    }
+
     case 'added': {
       return [
         ...state,

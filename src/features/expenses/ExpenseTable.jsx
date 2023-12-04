@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from 'react'
 import { IconPencil, IconTrash } from '@tabler/icons-react'
 import {
@@ -35,7 +36,7 @@ function ExpenseTable() {
       ? 'bg-spare-gray-100 text-spare-gray-15'
       : ''
 
-  const filteredData = data.filter(
+  const filteredData = data?.filter(
     (item) =>
       item.name
         .toLowerCase()
@@ -65,7 +66,7 @@ function ExpenseTable() {
         <Table.Body>
           <ExpenseAdd />
 
-          {filteredData.map((item) => (
+          {filteredData?.map((item) => (
             <Table.Row key={item.id}>
               <Table.Cell className={isChecked(item.id)}>
                 <Checkbox
@@ -88,13 +89,13 @@ function ExpenseTable() {
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
-                <Badge size="sm">{item.category}</Badge>
+                {/* <Badge size="sm">{item.category}</Badge> */}
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
-                <Badge color="gray" size="sm">
+                {/* <Badge color="gray" size="sm">
                   {item.origin}
-                </Badge>
+                </Badge> */}
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>

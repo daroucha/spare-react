@@ -1,44 +1,14 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useReducer, useState } from 'react'
+import { useReducer, useState, useEffect } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import PageHeader from '../ui/PageHeader'
 import { DataContext } from '../features/expenses/ExpenseDataContext'
 import ExpenseAddButton from '../features/expenses/ExpenseAddButton'
 import ExpenseFilters from '../features/expenses/ExpenseFilters'
 import ExpenseTable from '../features/expenses/ExpenseTable'
 import ExpenseDataReducer from '../features/expenses/ExpenseDataReducer'
-
-const fetched = [
-  {
-    id: '6568bbabd1bc0fc2c9b5f49e',
-    name: '🚗 Car Installment',
-    amount: 1594.22,
-    category: 'Investment',
-    origin: 'Bill',
-    type: 'Installment',
-    current: 19,
-    installment: 60,
-  },
-  {
-    id: '6568be8c2a75dcf06dd9169f',
-    name: '🚌 Transportation',
-    amount: 607.8,
-    category: 'Fixed',
-    origin: 'PIX',
-    type: 'Bill',
-    current: '✕',
-    installment: '✕',
-  },
-  {
-    id: '65687be638a1de8d44ba8718',
-    name: '🖥️ Mac Mini',
-    amount: 541.62,
-    category: 'Variable',
-    origin: 'Credit',
-    type: 'Installment',
-    current: 3,
-    installment: 12,
-  },
-]
+import { getAllExpenses } from '../services/apiExpenses'
 
 function Expenses() {
   const [checked, setChecked] = useState([])
@@ -46,8 +16,34 @@ function Expenses() {
 
   const [data, dispatch] = useReducer(
     ExpenseDataReducer,
-    fetched
+    []
   )
+
+  const {
+    data: expenses,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ['expenses'],
+    queryFn: getAllExpenses,
+  })
+
+  useEffect(
+    () =>
+      dispatch({
+        type: 'loaded',
+        state: expenses,
+      }),
+    [expenses]
+  )
+
+  if (isLoading) {
+    return <h1>Loading</h1>
+  }
+
+  if (error) {
+    return <h1>Error</h1>
+  }
 
   return (
     <DataContext.Provider

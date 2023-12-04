@@ -6,7 +6,7 @@ import { IconCheck, IconX } from '@tabler/icons-react'
 function ExpenseAdd() {
   const { data, dispatch } = useContext(DataContext)
 
-  const addedRow = data.filter(
+  const addedRow = data?.filter(
     (item) => item.id === '_client'
   )
 

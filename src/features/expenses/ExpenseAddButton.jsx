@@ -9,7 +9,7 @@ function ExpenseAddButton() {
   const [disabled, setDisabled] = useState(false)
 
   useEffect(() => {
-    const newRowCount = data.filter(
+    const newRowCount = data?.filter(
       (item) => item.id === '_client'
     ).length
 
