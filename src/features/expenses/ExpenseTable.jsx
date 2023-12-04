@@ -89,7 +89,9 @@ function ExpenseTable() {
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
-                {/* <Badge size="sm">{item.category}</Badge> */}
+                <Badge size="sm">
+                  {item.category?.name}
+                </Badge>
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
@@ -103,11 +105,15 @@ function ExpenseTable() {
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
-                {item.current}
+                {item.recurrence.status
+                  ? item.recurrence.current
+                  : '✕'}
               </Table.Cell>
 
               <Table.Cell className={isChecked(item.id)}>
-                {item.installment}
+                {item.recurrence.status
+                  ? item.recurrence.total
+                  : '✕'}
               </Table.Cell>
 
               <Table.Cell
